@@ -1,5 +1,5 @@
 /**
- * Keymetrics
+ * Keymetrics Node
  *
  * LICENSE:    MIT
  *
