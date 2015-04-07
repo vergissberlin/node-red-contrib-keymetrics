@@ -34,13 +34,12 @@ LICENSE:    MIT
 </script>
 
 <script type="text/x-red" data-help-name="keymetrics">
-    <p>Send all input messages to Keymetrics as event</p>
-    <p>The Debug node can be connected to the output of any node. It can be used to display the output of any message property in the keymetrics dashbord. The default is to display <b>msg.payload</b>.</p>
-    <p>Each message will also display the timestamp, <b>msg.topic</b> and the property chosen to output.</p>
-    <p>The sidebar can be accessed under the options drop-down in the top right corner.</p>
+    <p>Push all input messages to Keymetrics as event or metric.</p>
+		<div class="keymetrics-logo"><a href="https://keymetrics.io" target="_blank"><img src="../icons/keymetrics-logo.png"></a></div>
+    <p>The Debug node can be connected to the output of any node. It can be used to push the output of any message property in the keymetrics dashbord. The default is to display <b>msg.payload</b>.</p>
     <p>The button to the right of the node will toggle its output on and off so you can de-clutter the debug window.</p>
-    <p>Selecting any particular message will highlight (in red) the debug node that reported it. This is useful if you wire up multiple debug nodes.</p>
     <p>Optionally can show the complete <b>msg</b> object.</p>
+    <p>Alerts are also displayed as alerts in Keymetrics.</p>
 </script>
 
 <script type='text/javascript'>
@@ -121,6 +120,13 @@ LICENSE:    MIT
 			});
 		}
 	});
-
-
 </script>
+
+<style type="text/css">
+	.keymetrics-logo {
+		margin: 15px 0;
+		padding: 20px 10px;
+		background-color: #242b30;
+		text-align: center;
+	}
+</style>

@@ -5,11 +5,12 @@
 .git
 .hg
 .idea
+.inch.yml
 .lock-wscript
 .travis.yml
 .wafpickle-*
-CVS
-Gruntfile.js
-npm-debug.log
-src
-tests
+/docs
+/Gruntfile.js
+/npm-debug.log
+/src
+/tests
