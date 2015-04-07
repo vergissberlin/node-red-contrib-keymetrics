@@ -1,0 +1,6 @@
+files:
+  included:
+    - src/**/*.js
+    - src/**/*.html
+  excluded:
+    - icons/*
