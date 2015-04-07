@@ -1,5 +1,4 @@
 # node-red-contrib-keymetrics
----
 
 [![Dependency Status](https://gemnasium.com/vergissberlin/node-red-contrib-keymetrics.svg)](https://gemnasium.com/vergissberlin/node-red-contrib-keymetrics) [![Build Status](https://api.travis-ci.org/vergissberlin/node-red-contrib-keymetrics.png?branch=master)](https://travis-ci.org/vergissberlin/node-red-contrib-keymetrics) [![Inline docs](http://inch-ci.org/github/vergissberlin/node-red-contrib-keymetrics.svg?branch=master)](http://inch-ci.org/github/vergissberlin/node-red-contrib-keymetrics) [![Issues](http://img.shields.io/github/issues/vergissberlin/node-red-contrib-keymetrics.svg)]( https://github.com/vergissberlin/node-red-contrib-keymetrics/issues "GitHub ticket system") [![npm version](https://img.shields.io/npm/v/node-red-contrib-keymetrics.png)](https://npmjs.org/package/node-red-contrib-keymetrics "View this project on npm") [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/vergissberlin/node-red-contrib-keymetrics?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
