@@ -1,0 +1,48 @@
+{
+  "name": "node-red-contrib-keymetrics",
+  "version": "0.0.1",
+  "description": "Debug your flows in Node-RED and send the output to keymetrics.io.",
+  "main": "dist/js/keymetrics-event.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/integration/node-red-contrib-keymetrics-integration-child.js && node tests/integration/node-red-contrib-keymetrics-integration-simple.js && node tests/integration/node-red-contrib-keymetrics-integration-unique.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vergissberlin/node-red-contrib-keymetrics.git"
+  },
+  "keywords": [
+    "keymetrics",
+    "debug",
+    "monitoring",
+    "node-red",
+    "nodered"
+  ],
+  "author": {
+    "name": "André Lademann",
+    "email": "vergissberlin@googlemail.com"
+  },
+  "maintainers": [
+    {
+      "name": "André Lademann",
+      "email": "vergissberlin@googlemail.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vergissberlin/node-red-contrib-keymetrics/issues"
+  },
+  "homepage": "https://github.com/vergissberlin/node-red-contrib-keymetrics",
+  "dependencies": {
+    "pmx": "^0.3.5"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-jshint": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^0.6.0"
+  }
+}

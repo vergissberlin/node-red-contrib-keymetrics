@@ -1,0 +1,126 @@
+<!--
+Keymetrics Node
+
+LICENSE:    MIT
+
+@project    node-red-contrib-keymetrics
+@package    Keymetrics
+@author     André Lademann <vergissberlin@googlemail.com>
+@copyright  Copyright (c) 2015 andrelademann.de
+@license    http://opensource.org/licenses/MIT
+-->
+<script type="text/x-red" data-template-name="keymetrics">
+    <div class="form-row">
+        <label for="node-input-select-complete"><i class="fa fa-list"></i> Output</label>
+        <select type="text" id="node-input-select-complete" style="display: inline-block; width: 250px; vertical-align: top;">
+            <option value="false">message property</option>
+            <option value="true">complete msg object</option>
+        </select>
+    </div>
+    <div class="form-row" id="node-prop-row">
+        <label for="node-input-complete">&nbsp;</label>msg.<input type="text" style="width:208px" id="node-input-complete">
+    </div>
+    <div class="form-row">
+        <label for="node-input-console"><i class="fa fa-random"></i> to</label>
+        <select type="text" id="node-input-console" style="display: inline-block; width: 250px; vertical-align: top;">
+            <option value="metrics">custom metrics</option>
+            <option value="event">custom events</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="keymetrics">
+    <p>Send all input messages to Keymetrics as event</p>
+    <p>The Debug node can be connected to the output of any node. It can be used to display the output of any message property in the keymetrics dashbord. The default is to display <b>msg.payload</b>.</p>
+    <p>Each message will also display the timestamp, <b>msg.topic</b> and the property chosen to output.</p>
+    <p>The sidebar can be accessed under the options drop-down in the top right corner.</p>
+    <p>The button to the right of the node will toggle its output on and off so you can de-clutter the debug window.</p>
+    <p>Selecting any particular message will highlight (in red) the debug node that reported it. This is useful if you wire up multiple debug nodes.</p>
+    <p>Optionally can show the complete <b>msg</b> object.</p>
+</script>
+
+<script type='text/javascript'>
+	/**
+	 * @see https://github.com/node-red/node-red/blob/master/nodes/core/core/58-debug.html
+	 */
+	RED.nodes.registerType('keymetrics', {
+		category: 'output',
+		align: 'right',
+		color: '#666', //'#242b30',
+		defaults: {
+			name: {value: ''},
+			active: {value: true},
+			console: {value: 'metrics'},
+			complete: {value: 'false', required: true}
+		},
+		inputs: 1,
+		outputs: 0,
+		icon: '../icons/keymetrics.png',
+		label: function () {
+			if (this.complete === true || this.complete === 'true') {
+				return this.name || 'msg';
+			} else {
+				return this.name || 'msg.' + ((!this.complete || this.complete === 'false') ? 'payload' : this.complete);
+			}
+		},
+		labelStyle: function () {
+			return this.name ? 'node_label_italic' : '';
+		},
+		button: {
+			toggle: 'active',
+			onclick: function () {
+				var label = this.name || 'debug';
+				$.ajax({
+					url: 'keymetrics/' + this.id + '/' + (this.active ? 'enable' : 'disable'),
+					type: 'POST',
+					success: function (resp, textStatus, xhr) {
+						if (xhr.status == 200) {
+							RED.notify('Successfully activated: Keymetrics - ' + label, 'success');
+						} else if (xhr.status == 201) {
+							RED.notify('Successfully deactivated: Keymetrics - ' + label, 'success');
+						}
+					},
+					error: function (jqXHR, textStatus, errorThrown) {
+						if (jqXHR.status == 404) {
+							RED.notify('<strong>Error</strong>: Keymetrics debug node not deployed', 'error');
+						} else if (jqXHR.status == 0) {
+							RED.notify('<strong>Error</strong>: no response from server', 'error');
+						} else {
+							RED.notify('<strong>Error</strong>: unexpected error: (' + err.status + ') ' + err.response, 'error');
+						}
+					}
+				});
+			}
+		},
+		oneditprepare: function () {
+			if (this.complete === 'true' || this.complete === true) {
+				// show complete message object
+				$('#node-input-select-complete').val('true');
+				$('#node-prop-row').hide();
+			} else {
+				// show msg.[   ]
+				var property = (!this.complete || (this.complete === 'false')) ? 'payload' : this.complete + '';
+				$('#node-input-select-complete').val('false');
+				$('#node-input-complete').val(property);
+				$('#node-prop-row').show();
+			}
+			$('#node-input-select-complete').change(function () {
+				var v = $('#node-input-select-complete option:selected').val();
+				$('#node-input-complete').val(v);
+				if (v !== 'true') {
+					$('#node-input-complete').val('payload');
+					$('#node-prop-row').show();
+					$('#node-input-complete').focus();
+				} else {
+					$('#node-prop-row').hide();
+				}
+			});
+		}
+	});
+
+
+</script>
