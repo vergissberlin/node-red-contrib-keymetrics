@@ -84,9 +84,9 @@ LICENSE:    MIT
 						}
 					},
 					error: function (jqXHR, textStatus, errorThrown) {
-						if (jqXHR.status == 404) {
+						if (jqXHR.status === 404) {
 							RED.notify('<strong>Error</strong>: Keymetrics debug node not deployed', 'error');
-						} else if (jqXHR.status == 0) {
+						} else if (jqXHR.status === 0) {
 							RED.notify('<strong>Error</strong>: no response from server', 'error');
 						} else {
 							RED.notify('<strong>Error</strong>: unexpected error: (' + err.status + ') ' + err.response, 'error');

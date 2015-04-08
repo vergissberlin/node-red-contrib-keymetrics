@@ -4,6 +4,10 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		inlinelint: {
+			html: ['src/**/*.html']
+		},
+
 		jshint: {
 			options: {
 				// http://www.jshint.com/docs/options/
@@ -19,9 +23,11 @@ module.exports = function (grunt) {
 			},
 			all: [
 				'Gruntfile.js',
-				'src/**/*.js',
-				'test/**/*.js'
-			]
+				'src/**/*.js'
+			],
+			test: [
+				'tests/**/*.js'
+			],
 		},
 
 		simplemocha: {
@@ -47,6 +53,8 @@ module.exports = function (grunt) {
 
 	// build
 	grunt.registerTask('build', ['jshint']);
-	grunt.registerTask('default', ['jshint:all', 'simplemocha:all']);
+	grunt.registerTask('default', ['jshint:all','inlinelint:html', 'simplemocha:all']);
+	grunt.registerTask('travis', ['jshint:all','inlinelint:html', 'simplemocha:all']);
+	grunt.registerTask('test', ['simplemocha:all']);
 
 };

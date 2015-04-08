@@ -40,13 +40,14 @@
     "url": "https://github.com/vergissberlin/node-red-contrib-keymetrics/issues"
   },
   "homepage": "https://github.com/vergissberlin/node-red-contrib-keymetrics",
-  "node-red"      : {
-    "nodes"     : {
+  "node-red": {
+    "nodes": {
       "keymetrics": "src/keymetrics.js"
     }
   },
   "dependencies": {
-    "pmx": "^0.3.5"
+    "pmx": "^0.3.5",
+    "util": "^0.10.3"
   },
   "devDependencies": {
     "fs-extra": "^0.18.0",
@@ -57,11 +58,11 @@
     "grunt-lint-inline": "^0.4.3",
     "grunt-simple-mocha": "^0.4.0",
     "load-grunt-tasks": "^3.1.0",
-    "mocha": "2.2.4",
+    "mocha": "^2.2.4",
     "nock": "^1.5.0",
-    "should": "5.2.0",
-    "sinon": "1.14.1",
-    "supertest": "0.15.0"
+    "should": "^5.2.0",
+    "sinon": "^1.14.1",
+    "supertest": "^0.15.0"
   },
   "engines": {
     "node": ">=0.8 <0.12"
