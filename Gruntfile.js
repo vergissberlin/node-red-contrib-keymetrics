@@ -38,7 +38,11 @@ module.exports = function (grunt) {
 				ui: 'bdd',
 				reporter: 'spec'
 			},
-			all: {src: ['tests/spec/**/*_spec.js']}
+			all: {
+				src: [
+					'tests/spec/**/*_spec.js'
+				]
+			}
 		},
 
 		watch: {

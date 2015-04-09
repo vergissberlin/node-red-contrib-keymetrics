@@ -18,7 +18,7 @@ var keymetricsNode = require('../../src/keymetrics.js');
 var helper = require('../helper.js');
 var nock = helper.nock;
 
-describe('keymetrics node', function () {
+describe('Keymetrics node', function () {
 
 	before(function (done) {
 		helper.startServer(done);
