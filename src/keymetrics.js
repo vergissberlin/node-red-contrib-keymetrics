@@ -8,6 +8,9 @@
  * @author     André Lademann <vergissberlin@googlemail.com>
  * @copyright  Copyright (c) 2015 andrelademann.de
  * @license    http://opensource.org/licenses/MIT
+ * @public
+ * @exports    RED
+ * @property {KeymetricsNode} KeymetricsNode - Node
  */
 
 module.exports = function (RED) {
@@ -20,6 +23,13 @@ module.exports = function (RED) {
 	var debuglength = RED.settings.debugMaxLength || 1000;
 
 
+	/**
+	 * KeymetricsNode
+	 * 
+	 * @param {*} config Coniguration
+	 * @return void
+	 * @public
+	 */
 	function KeymetricsNode(config) {
 		RED.nodes.createNode(this, config);
 		this.name = config.name;
@@ -127,7 +137,14 @@ module.exports = function (RED) {
 		}
 	});
 
-
+	/**
+	 * sendKeymetrics
+	 * Send message to Keynmetrics
+	 * 
+	 * @param {*} msg Message object
+	 * @return void
+	 * @public
+	 */
 	function sendKeymetrics(msg) {
 
 		// Send
@@ -154,7 +171,7 @@ module.exports = function (RED) {
 			var seen = [];
 			msg.format = 'object';
 			if (util.isArray(msg.msg)) {
-				msg.format = 'array';
+			e	msg.format = 'array';
 			}
 			msg.msg = JSON.stringify(msg.msg, function (key, value) {
 				if (typeof value === 'object' && value !== null) {
@@ -193,8 +210,6 @@ module.exports = function (RED) {
 		if (msg.msg.length > debuglength) {
 			msg.msg = msg.msg.substr(0, debuglength) + ' ....';
 		}
-
-
 
 		RED.comms.publish('debug', msg);
 	}
