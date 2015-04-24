@@ -45,3 +45,7 @@ Open your *Node-RED* Frontend and you will find the new node under the group *ou
 ###### Glossary <a id="glossary"></a>
 1. *[PM2](https://github.com/Unitech/pm2) is a process manager for [Node.js](https://nodejs.org). It makes it easy to run applications on boot and ensure they are restarted if necessary.*
 - *[keymetrics.io](http://keymetrics.io) makes it easy to monitor and manage apps accross servers.*
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vergissberlin/node-red-contrib-keymetrics/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
