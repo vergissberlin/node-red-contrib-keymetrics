@@ -49,3 +49,7 @@ Open your *Node-RED* Frontend and you will find the new node under the group *ou
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vergissberlin/node-red-contrib-keymetrics/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vergissberlin/node-red-contrib-keymetrics/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
