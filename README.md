@@ -47,5 +47,5 @@ Open your *Node-RED* Frontend and you will find the new node under the group *ou
 - *[keymetrics.io](http://keymetrics.io) makes it easy to monitor and manage apps accross servers.*
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vergissberlin/node-red-contrib-keymetrics/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vergissberlin/node-red-contrib-keymetrics/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Greenkeeper badge](https://badges.greenkeeper.io/vergissberlin/node-red-contrib-keymetrics.svg)](https://greenkeeper.io/)
 
