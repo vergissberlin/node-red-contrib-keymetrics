@@ -46,7 +46,7 @@
     }
   },
   "dependencies": {
-    "pmx": "^0.3.5",
+    "pmx": "^0.6.0",
     "util": "^0.10.3"
   },
   "devDependencies": {
