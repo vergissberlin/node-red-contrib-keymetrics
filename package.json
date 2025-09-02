@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "pmx": "^0.3.5",
-    "util": "^0.10.3"
+    "util": "^0.12.0"
   },
   "devDependencies": {
     "fs-extra": "^0.23.0",
