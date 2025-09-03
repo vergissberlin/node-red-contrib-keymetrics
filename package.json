@@ -52,7 +52,7 @@
   "devDependencies": {
     "fs-extra": "^0.23.0",
     "grunt": "^0.4.5",
-    "grunt-cli": "0.1.13",
+    "grunt-cli": "1.5.0",
     "grunt-contrib-jshint": "^0.11.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-lint-inline": "^0.4.3",
