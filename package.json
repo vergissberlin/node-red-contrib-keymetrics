@@ -46,23 +46,23 @@
     }
   },
   "dependencies": {
-    "pmx": "^0.3.5",
-    "util": "^0.10.3"
+    "pmx": "^1.6.7",
+    "util": "^0.11.0"
   },
   "devDependencies": {
-    "fs-extra": "^0.23.0",
-    "grunt": "^0.4.5",
-    "grunt-cli": "0.1.13",
-    "grunt-contrib-jshint": "^0.11.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-lint-inline": "^0.4.3",
+    "fs-extra": "^6.0.1",
+    "grunt": "^1.0.3",
+    "grunt-cli": "1.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-lint-inline": "^1.0.0",
     "grunt-simple-mocha": "^0.4.0",
-    "load-grunt-tasks": "^3.1.0",
-    "mocha": "^2.2.4",
-    "nock": "^2.10.0",
-    "should": "^7.0.2",
-    "sinon": "^1.14.1",
-    "supertest": "^1.0.1"
+    "load-grunt-tasks": "^4.0.0",
+    "mocha": "^5.2.0",
+    "nock": "^9.3.3",
+    "should": "^13.2.1",
+    "sinon": "^6.0.0",
+    "supertest": "^3.1.0"
   },
   "engines": {
     "node": ">=0.8 <0.12"
